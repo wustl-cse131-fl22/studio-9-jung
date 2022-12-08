@@ -29,8 +29,18 @@ public class WordCount {
 	 */
 	public static Map<String, Integer> countWords(List<String> words) {
 
-		// FIXME
-		throw new NotYetImplementedException();
+		Map<String, Integer> WordCount = new HashMap<String, Integer>();
+		for (int i=0; i<words.size(); i++) {
+			String word = words.get(i);
+			if (WordCount.get(word)==null) {
+				WordCount.put(word, 1);
+			}
+			else {
+				int oldCount = WordCount.get(word);
+				WordCount.put(word, oldCount+1);
+			}
+		}
+		return WordCount;
 
 	}
 }
